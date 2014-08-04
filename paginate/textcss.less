@@ -1,0 +1,51 @@
+@import "rsp.common.less";
+
+html,body{
+  height: 100%;
+}
+.paginate{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .boxSizing;
+  padding-bottom: 40px;
+  .mainbox{
+    width: 98%;
+    height: 100%;
+    margin: 0 auto;
+    background: #eee;
+    overflow: hidden;
+    line-height: 24px;
+    position: relative;
+    .boxSizing;
+    .content{
+      width: 100%;
+      height: auto;
+      font-size: 16px;
+      position: absolute;
+      word-break: break-all;
+      text-align: justify;
+    }
+  }
+
+  .mainbtn{
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    background: #333;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .mainbtn .prev,
+  .mainbtn .mark,
+  .mainbtn .next{
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    color:#fff;
+    float: left;
+    .boxSizing;
+    line-height: 40px;
+  }
+}
