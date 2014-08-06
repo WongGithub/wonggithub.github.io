@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>响应式框架</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--避免IE使用兼容模式-->
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="msapplication-tap-highlight" content="no"/><!-- windows phone 点击无高光 -->
+    <link href="css/rsp.common.css" rel="stylesheet" type="text/css" /><!--框架主样式-->
+    <script src="js/modernizr.js"></script><!--兼容判断-->
+    <script>//判断加载zepto或者jq，且如果是IE时，加载styleIE.css确保IE兼容
+    (function () {
+        var protoInObj = '__proto__' in {},
+                ua = window.navigator.userAgent,
+                isIE = (function () {
+                    var reg = new RegExp('MSIE');
+                    return reg.test(ua);
+                })();
+        document.write('<script src="js/' + (protoInObj ? 'zepto.js' : 'jquery.js') + '">' + '<' + decodeURIComponent('%2F') + 'script>');
+        if (isIE) {
+            document.write('<link href="css/styleIE.css" rel="stylesheet" type="text/css">');
+        }
+    })();
+    </script>
+
+    <style>/*demo样式，可删*/
+    div.box{
+        height: auto !important;
+        height: 80px;
+        min-height: 80px;
+        background: #84aad1;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 24px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        font-family: "microsoft yahei";
+    }
+    div.box_inner {
+        background: #c1d4e8;
+    }
+    </style>
+</head>
+<body>
+<div class="rsp_body"><!--rsp_body:响应式内容区，在这个class的容器内均启用响应式-->
+    <div class="row"><!--row:分列，即使单列，都建议套在这个容器里面，保持结构统一-->
+        <div class="box col_dt_12">12</div><!--col_dt_n:这个样式中，col表示模块，dt表示在普通桌面分辨率下，n表示占用多少个单元格-->
+    </div>
+    <div class="row">
+        <div class="box col_dtHD_6 col_dt_6 col_pad_6 col_ph_12">6</div><!--可分辨为每个设备设置单独的单元格数量-->
+        <div class="box col_dtHD_6 col_dt_6 col_pad_6 col_ph_12">6</div>
+    </div>
+    <div class="row">
+        <div class="box col_dtHD_4 col_dt_4 col_pad_4 col_ph_12">4</div>
+        <div class="box col_dtHD_4 col_dt_4 col_pad_4 col_ph_12">4</div>
+        <div class="box col_dtHD_4 col_dt_4 no-margin-right col_pad_4 pad_margin-right col_ph_12">4</div>
+    </div>
+    <div class="row">
+        <div class="box col_dtHD_3 col_dt_3 col_pad_3 col_ph_12">3</div>
+        <div class="box col_dtHD_3 col_dt_3 col_pad_3 col_ph_12">3</div>
+        <div class="box col_dtHD_3 col_dt_3 col_pad_3 col_ph_12">3</div>
+        <div class="box col_dtHD_3 col_dt_3 col_pad_3 col_ph_12">3</div>
+    </div>
+    <div class="row">
+        <div class="box col_dtHD_2 col_dt_2 col_pad_2 col_ph_12">2</div>
+        <div class="box col_dtHD_2 col_dt_2 col_pad_2 col_ph_12">2</div>
+        <div class="box col_dtHD_2 col_dt_2 col_pad_2 col_ph_12">2</div>
+        <div class="box col_dtHD_2 col_dt_2 col_pad_2 col_ph_12">2</div>
+        <div class="box col_dtHD_2 col_dt_2 col_pad_2 col_ph_12">2</div>
+        <div class="box col_dtHD_2 col_dt_2 col_pad_2 col_ph_12">2</div>
+    </div>
+    <div class="row">
+        <div class="box col_dtHD_1 col_dt_1 col_pad_1 col_ph_12">1</div>
+        <div class="box col_dtHD_1 dtHD_offset_1 col_dt_1 col_pad_1 col_ph_12">1</div>
+        <div class="box col_dtHD_1 col_dt_1 dt_offset_1 col_pad_1 col_ph_12">1</div>
+        <div class="box col_dtHD_1 col_dt_1 col_pad_1 pad_offset_1 col_ph_12">1</div>
+        <div class="box col_dtHD_1 col_dt_1 col_pad_1 col_ph_12">1</div>
+        <div class="box col_dtHD_1 col_dt_1 col_pad_1 col_ph_12">1</div>
+        <div class="box col_dtHD_1 col_dt_1 col_pad_1 col_ph_12">1</div>
+        <div class="box col_dtHD_1 col_dt_1 col_pad_1 col_ph_12">1</div>
+        <div class="box col_dtHD_1 col_dt_1 col_pad_1 col_ph_12">1</div>
+        <div class="box col_dtHD_1 col_dt_1 col_pad_1 col_ph_12">1</div>
+        <div class="box col_dtHD_1 col_dt_1 col_pad_1 col_ph_12">1</div>
+    </div>
+    <div class="row">
+        <div class="box col_dt_12">
+            12
+            <div class="row">
+                <div class="box box_inner col_dtHD_6 col_dt_6 col_pad_6 col_ph_122">6</div>
+                <div class="box box_inner col_dtHD_6 col_dt_6 col_pad_6 col_ph_122 no-margin-right">6</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

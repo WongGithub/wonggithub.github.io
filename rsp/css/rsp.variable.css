@@ -1,0 +1,30 @@
+.boxSizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.float_left {
+  float: left;
+}
+.float_right {
+  float: right;
+}
+.float_none {
+  float: none;
+}
+.no-margin-lr {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+.no-margin-right {
+  margin-right: 0 !important;
+}
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+.set3Dspace {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+}

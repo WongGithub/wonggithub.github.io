@@ -1,0 +1,62 @@
+//less变量设置
+
+@width_dthd:1196px;//高分辨率栅格内容区宽度
+@width_dt:980px;//普通PC分辨率栅格内容区宽度
+@width_pad:700px;//PAD栅格内容区宽度
+@width_ph:auto;//Phone栅格内容区宽度
+@offset_width:20px;//单元间隔
+
+//模块在不同平台下的单位宽度
+@col_dthd_unit_width:((@width_dthd - @offset_width*11) / @width_dthd / 12) * 100%;//6.80044593088071%;
+@col_dt_unit_width:((@width_dt - @offset_width*11) / @width_dt / 12) * 100%;//6.46258503401361%;
+@col_pad_unit_width:((@width_pad - @offset_width*11) / @width_pad / 12) * 100%;//5.71428571428571%;
+@col_ph_unit_width:100% / 12;
+
+//模块在不同平台下的单位位移量
+@offset_dthd_val:((@width_dthd - @offset_width * 11) / 12 + @offset_width) / @width_dthd * 100%;//8.4726867335563%;
+@offset_dt_val:((@width_dt - @offset_width * 11) / 12 + @offset_width) / @width_dt * 100%;//8.503401360544222%;
+@offset_pad_val:((@width_pad - @offset_width * 11) / 12 + @offset_width) / @width_pad * 100%;//8.571428571428567%;
+@offset_ph_val:100% /12;
+
+//模块在不同平台下的单元格外补白
+@col_dthd_margin:(@offset_width / @width_dthd) *100%;//1.672240802675585%;
+@col_dt_margin:(@offset_width / @width_dt) *100%;//2.040816326530612%;
+@col_pad_margin:(@offset_width / @width_pad) *100%;//2.857142857142857%;
+
+//boxSizing通用设置
+.boxSizing{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//float通用设置
+.float_left{
+  float: left;
+}
+.float_right{
+  float: right;
+}
+.float_none{
+  float: none;
+}
+
+//margin通用设置
+.no-margin-lr {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+.no-margin-right{
+  margin-right: 0 !important;
+}
+.no-margin-bottom{
+  margin-bottom: 0 !important;
+}
+
+.set3Dspace{
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility:hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style:preserve-3d;
+}
+
