@@ -1,0 +1,77 @@
+//设置animate动画
+.animateFn(@name;@duration;@iterationCount;@timingFunction;@delay){
+  -webkit-animation-name:@name;
+  -moz-animation-name:@name;
+  -ms-animation-name:@name;
+  animation-name:@name;
+  -webkit-animation-duration: @duration;
+  -moz-animation-duration: @duration;
+  -ms-animation-duration: @duration;
+  animation-duration: @duration;
+  -webkit-animation-iteration-count:@iterationCount;
+  -moz-animation-iteration-count:@iterationCount;
+  -ms-animation-iteration-count:@iterationCount;
+  animation-iteration-count:@iterationCount;
+  -webkit-animation-timing-function: @timingFunction;
+  -moz-animation-timing-function: @timingFunction;
+  -ms-animation-timing-function: @timingFunction;
+  animation-timing-function: @timingFunction;
+  -webkit-animation-delay:@delay;
+  -moz-animation-delay:@delay;
+  -ms-animation-delay:@delay;
+  animation-delay:@delay;
+}
+//设置animate动画，未设名，可通过js添加触发动画
+.animateFn_noName(@duration;@iterationCount;@timingFunction){
+  -webkit-animation-duration: @duration;
+  -moz-animation-duration: @duration;
+  -ms-animation-duration: @duration;
+  animation-duration: @duration;
+  -webkit-animation-iteration-count:@iterationCount;
+  -moz-animation-iteration-count:@iterationCount;
+  -ms-animation-iteration-count:@iterationCount;
+  animation-iteration-count:@iterationCount;
+  -webkit-animation-timing-function: @timingFunction;
+  -moz-animation-timing-function: @timingFunction;
+  -ms-animation-timing-function: @timingFunction;
+  animation-timing-function: @timingFunction;
+}
+//设置transition动画
+.transitionFn(@name;@duration;@timing;@delay){
+  -webkit-transition: @name @duration @timing @delay;
+  -moz-transition: @name @duration @timing @delay;
+  -ms-transition: @name @duration @timing @delay;
+  transition: @name @duration @timing @delay;
+}
+//设置translate
+.translateFn(@x;@y){
+  -webkit-transform:translate(@x,@y);
+  -moz-transform:translate(@x,@y);
+  -o-transform:translate(@x,@y);
+  transform:translate(@x,@y);
+}
+//设置translate3D
+.translate3DFn(@x;@y;@z){
+  -webkit-transform:translate3d(@x,@y,@z);
+  -moz-transform:translate3d(@x,@y,@z);
+  -o-transform:translate3d(@x,@y,@z);
+  transform:translate3d(@x,@y,@z);
+}
+//设置rotate
+.rotateFn(@deg){
+  -webkit-transform:rotate(@deg);
+  -moz-transform:rotate(@deg);
+  -ms-transform:rotate(@deg);
+  transform:rotate(@deg);
+}
+//设置元素为3D空间并设置透视值
+.set3DspaceAndPerspective(@perspective){
+  -webkit-perspective:@perspective;
+  -moz-perspective:@perspective;
+  -ms-perspective:@perspective;
+  perspective:@perspective;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style:preserve-3d;
+  -ms-transform-style:preserve-3d;
+  transform-style:preserve-3d;
+}
